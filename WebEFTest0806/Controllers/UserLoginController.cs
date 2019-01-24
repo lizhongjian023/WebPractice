@@ -37,11 +37,11 @@ namespace WebEFTest0806.Controllers
             UserInfo userInfos = userInfoService.GetEntities(u => u.UserLoginName == userName.ToString().Trim() && u.UserPsd == psd && u.IsUseful == 1).FirstOrDefault<UserInfo>();
             if (userInfos != null)     //登陆成功
             {
-                 return Content("ok:登陆成功！");  
+                 return Content("ok:恭喜，登陆成功！");  
             }
             else
             {
-                 return Content("no:你会登陆吗？");
+                 return Content("no:傻叉，你会登陆吗？");
             }
         }
     }
