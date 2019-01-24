@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Model.News>
+@using Model;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Content/layui-v2.4.5/layui/layui.js"></script>
+    <link href="~/Content/layui-v2.4.5/layui/css/layui.css" rel="stylesheet" />
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NewsMsg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImagePath)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in (List<News>)ViewData["news"])
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NewsMsg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImagePath)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+    <div class="layui-carousel" id="test1" lay-filter="carofilter" style="font-size:larger">
+        <div carousel-item>
+            <div style="background-color:red">条目1</div>
+            <div style="background-color:green">条目2</div>
+            <div style="background-color:blue">条目3</div>
+            <div style="background-color:mediumorchid">条目4</div>
+            <div style="background-color:orange">条目5</div>
+        </div>
+    </div>
+    <script>
+        layui.use('carousel', function () {
+            var carousel = layui.carousel;
+            //***************************建造实例
+            var ins = carousel.render({
+                elem: '#test1'
+                , width: '1140px'     //设置容器宽度
+                , height: '600px'
+                //, arrow: 'always'    //始终显示箭头，可选hover,none
+                ////,anim: 'updown'    //切换动画方式，可选fade,default
+                //, full: false        //全屏
+                //, autoplay: true     //自动切换
+                //, interval: 5000     //自动切换的时间间隔
+                //, index: 3           //初始化时item索引,默认时0
+                , indicator: 'inside' //指示器位置，可选outside,none
+            });
+
+            //**************************监听轮播切换事件
+            carousel.on('change(carofilter)', function (obj) { //test1来源于对应HTML容器的 lay-filter="test1" 属性值
+                console.log(obj.index);     //当前条目的索引
+                console.log(obj.prevIndex); //上一个条目的索引
+                console.log(obj.item);      //当前条目的元素对象
+            });
+
+            //****************************重置轮播
+            //var ins = carousel.render(options);
+            ins.reload({ arrow: 'hover' });//将arror从alway变成hover
+        });
+    </script>
+</body>
+</html>

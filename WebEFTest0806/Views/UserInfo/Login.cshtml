@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link href="~/Content/EMS-menu.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>登录页</title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>登录名：</td>
+                <td>
+                    <input type="text" name="loginName" id="loginName" />
+                </td>
+
+            </tr>
+            <tr>
+                <td>密  码：</td>
+                <td>
+                    <input type="password" name="loginPsd" id="loginPsd" />
+                </td>
+
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                    <input type="submit" name="登陆" id="btnLogin" />
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+
+    @*<script type="text/javascript">
+        $(function () {
+
+            var loginName = $("#loginName").val();
+            var loginPSD = $("#loginPsd").val();
+            if (loginName == "") {
+                alert("请输入用户名！");
+                return;
+            }
+            if (loginPsd == "") {
+                alert("请输入密码！");
+                return;
+            }
+            $.ajax({
+                url: "/UserLogin/Index",
+                type: "post",
+                contentType: "application/json",
+                dataType: "text",
+                data: { "UserName": UserName, "UserPsd": UserPsd },
+                success: function (result, status) {
+
+                    
+                }
+            })
+        }) 
+    </script>*@
+</body>
+</html>

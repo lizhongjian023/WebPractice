@@ -1,0 +1,136 @@
+﻿@model IEnumerable<Model.UserInfo>
+@using Model;
+
+@{
+    Layout = null;
+}
+
+
+<script type="text/javascript">
+   
+</script>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/tableStyle.css" rel="stylesheet" />
+
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserLoginName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsVip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsOnLine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CrDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CrUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CrUserRealName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoUserRealName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserPsd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsUseful)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserRealName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserMail)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in (List < UserInfo >) ViewData["userInfoList"]   )
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserLoginName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsVip)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsOnLine)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CrDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CrUserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CrUserRealName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoUserRealName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MoUserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserPsd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsUseful)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserRealName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserMail)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>
