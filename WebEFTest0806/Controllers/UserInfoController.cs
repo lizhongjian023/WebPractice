@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebEFTest0806.Models;
+using Common;
 
 namespace WebEFTest0806.Controllers
 {
@@ -62,6 +63,11 @@ namespace WebEFTest0806.Controllers
                 return ViewBag.Errmsg = "no:请输入密码！";
             }
 
+            //  用户密码使用MD5加密
+            string userPsd = userInfo.UserPsd.ToMD5();
+            userInfo.UserPsd = userPsd;
+            userInfo.IsUseful = 1;
+            
             if (userInfoBll.Add(userInfo))
             {
                 return ViewBag.Errmsg = "ok:添加成功";
