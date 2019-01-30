@@ -1,0 +1,101 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TestView</title>
+    <link href="~/Content/layui-v2.4.5/layui/css/layui.css" rel="stylesheet" />
+    <script src="~/Content/layui-v2.4.5/layui/layui.js"></script>
+    <link href="~/Content/res/static/css/index.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        hello world
+    </div>
+
+    <!-- nav部分 -->
+    <div class="nav index">
+        <div class="layui-container">
+
+            <div class="nav-list">
+                <button>
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="layui-nav" lay-filter="">
+                    <li class="layui-nav-item layui-this"><a href="index.html">首页</a></li>
+                    <li class="layui-nav-item"><a href="product.html">产品</a></li>
+                    <li class="layui-nav-item"><a href="news.html">动态</a></li>
+                    <li class="layui-nav-item"><a href="case.html">案例</a></li>
+                    <li class="layui-nav-item"><a href="about.html">关于</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- main部分 -->
+    <div class="main-product">
+        <div class="layui-container">
+            <p class="title">专为前端而研制的<span>核心产品</span></p>
+            <div class="layui-row layui-col-space25">
+                <div class="layui-col-sm6 layui-col-md3">
+                    <div class="content">
+                        <div><img src="~/Content/res/static/img/Big_icon1.png"></div>
+                        <div>
+                            <p class="label">JS基础库</p>
+                            <p>从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。</p>
+                        </div>
+                        <a href="javascript:;">查看产品 ></a>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md3 ">
+                    <div class="content">
+                        <div><img src="~/Content/res/static/img/Big_icon2.png"></div>
+                        <div>
+                            <p class="label">CSS处理</p>
+                            <p>从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。</p>
+                        </div>
+                        <a href="javascript:;">查看产品 ></a>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md3 ">
+                    <div class="content">
+                        <div><img src="~/Content/res/static/img/Big_icon3.png"></div>
+                        <div>
+                            <p class="label">兼容性</p>
+                            <p>从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。</p>
+                        </div>
+                        <a href="javascript:;">查看产品 ></a>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md3 ">
+                    <div class="content">
+                        <div><img src="~/Content/res/static/img/Big_icon4.png"></div>
+                        <div>
+                            <p class="label">响应式</p>
+                            <p>从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。</p>
+                        </div>
+                        <a href="javascript:;">查看产品 ></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        layui.config({
+            base: '../res/static/js/'
+        }).use('firm');
+    </script>
+
+
+
+</body>
+</html>

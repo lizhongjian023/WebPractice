@@ -78,5 +78,11 @@ namespace WebEFTest0806.Controllers
             }
 
         }
+
+        public ActionResult TestView()
+        {
+
+            return View();
+        }
     }
 }
