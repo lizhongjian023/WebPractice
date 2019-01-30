@@ -3,22 +3,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
     <title>IT-首页</title>
-
     <link href="~/Content/layui-v2.4.5/layui/css/layui.css" rel="stylesheet" />
     <link href="~/Content/res/static/css/index.css" rel="stylesheet" />
     
 </head>
 <body>
+
     <!-- nav部分 -->
     <div class="nav index">
         <div class="layui-container">
-            <!-- 公司logo -->
-            <div class="nav-logo">
-                <a href="index.html">
 
-                    <img src="~/Content/res/static/img/logo.png" alt="类友网络" />
-                </a>
-            </div>
             <div class="nav-list">
                 <button>
                     <span></span><span></span><span></span>
@@ -37,25 +31,25 @@
 
     <!-- banner部分 -->
     @*<div>
-        <div class="layui-carousel" id="banner" lay-filter ="banner">
-            <div carousel-item>
-                <div>
-                    <img src="~/Content/res/static/img/banner1.jpg">
-                    <div class="panel">
-                        <p class="title">类友网络</p>
-                        <p>完美前端体验</p>
+            <div class="layui-carousel" id="banner" lay-filter="banner">
+                <div carousel-item>
+                    <div>
+                        <img src="~/Content/res/static/img/banner1.jpg">
+                        <div class="panel">
+                            <p class="title">类友网络</p>
+                            <p>完美前端体验</p>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <img src="~/Content/res/static/img/banner2.jpg">
-                    <div class="panel">
-                        <p class="title">类友网络</p>
-                        <p>完美前端体验</p>
+                    <div>
+                        <img src="~/Content/res/static/img/banner2.jpg">
+                        <div class="panel">
+                            <p class="title">类友网络</p>
+                            <p>完美前端体验</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>*@
+        </div>*@
 
 
 
@@ -186,7 +180,11 @@
     </div>
 
     <script src="~/Content/layui-v2.4.5/layui/layui.js"></script>
-
+    <script>
+        layui.config({
+            base: '../res/static/js/'
+        }).use('firm');
+    </script>
     @*<script type="text/javascript">
             layui.use(['carousel', 'form'], function () {
                 var carousel = layui.carousel
@@ -212,34 +210,34 @@
 
     <!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
     <!-- 条目中可以是任意内容，如：<img src=""> -->
-    <script>
-        layui.use('carousel', function () {
-            var carousel = layui.carousel;
-            //***************************建造实例
-            var ins = carousel.render({
-                elem: '#banner'
-                , width: '1140px'     //设置容器宽度
-                , height:'800px'
-                , arrow: 'always'    //始终显示箭头，可选hover,none
-                ////,anim: 'updown'    //切换动画方式，可选fade,default
-                //, full: false        //全屏
-                //, autoplay: true     //自动切换
-                //, interval: 5000     //自动切换的时间间隔
-                //, index: 3           //初始化时item索引,默认时0
-                //, indicator: 'inside' //指示器位置，可选outside,none
-            });
+    @*<script>
+            layui.use('carousel', function () {
+                var carousel = layui.carousel;
+                //***************************建造实例
+                var ins = carousel.render({
+                    elem: '#banner'
+                    , width: '1140px'     //设置容器宽度
+                    , height: '800px'
+                    , arrow: 'always'    //始终显示箭头，可选hover,none
+                    ////,anim: 'updown'    //切换动画方式，可选fade,default
+                    //, full: false        //全屏
+                    //, autoplay: true     //自动切换
+                    //, interval: 5000     //自动切换的时间间隔
+                    //, index: 3           //初始化时item索引,默认时0
+                    //, indicator: 'inside' //指示器位置，可选outside,none
+                });
 
-            //**************************监听轮播切换事件
-            carousel.on('change(carofilter)', function (obj) { //test1来源于对应HTML容器的 lay-filter="test1" 属性值
-                console.log(obj.index);     //当前条目的索引
-                console.log(obj.prevIndex); //上一个条目的索引
-                console.log(obj.item);      //当前条目的元素对象
-            });
+                //**************************监听轮播切换事件
+                carousel.on('change(carofilter)', function (obj) { //test1来源于对应HTML容器的 lay-filter="test1" 属性值
+                    console.log(obj.index);     //当前条目的索引
+                    console.log(obj.prevIndex); //上一个条目的索引
+                    console.log(obj.item);      //当前条目的元素对象
+                });
 
-            //****************************重置轮播
-            //var ins = carousel.render(options);
-            ins.reload({ arrow: 'hover' });//将arror从alway变成hover
-        });
-    </script>
+                //****************************重置轮播
+                //var ins = carousel.render(options);
+                ins.reload({ arrow: 'hover' });//将arror从alway变成hover
+            });
+        </script>*@
 
 </body>
